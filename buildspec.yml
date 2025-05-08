@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+      python: 3.10
+    commands:
+      - cd backend && npm install && cd ..
+      - cd frontend && npm install && cd ..
+      - pip3 install -r backend/fitness/requirements.txt || true
+  build:
+    commands:
+      - cd frontend && npm run build && cd ..
+      - echo "Build complete"
+artifacts:
+  files:
+    - '**/*'
