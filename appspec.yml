@@ -4,6 +4,8 @@ files:
   - source: /
     destination: /home/ec2-user/Olym_Project
     overwrite: true
+    exclude:
+      - .github/*
 hooks:
   AfterInstall:
     - location: scripts/after_install.sh
