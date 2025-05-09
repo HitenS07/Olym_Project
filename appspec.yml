@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/Olym_Project
+    overwrite: true
 hooks:
   AfterInstall:
     - location: scripts/after_install.sh
